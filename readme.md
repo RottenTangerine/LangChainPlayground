@@ -1,7 +1,60 @@
 # LangChain
 
-[LangChainDoc](https://python.langchain.com/docs/introduction/)
+This repo. is for testing the LangChain features base on online tutorials.
+
+Have fun
+
+# Docs:
+
+[LangChain Doc](https://python.langchain.com/docs/introduction/)
+
 [Integration Doc](https://python.langchain.com/docs/integrations/providers/)
+
+
+Official Tutorials:
+[LangChain Adademy](https://academy.langchain.com/)
+
+Github: 
+[langchain-ai/langchain-academy](https://github.com/langchain-ai/langchain-academy)
+
+# Tutorials
+
+- Create `config.json`
+
+config.json:
+```json
+{
+  "DS": {
+    "endpoint": "https://api.deepseek.com",
+    "key": "YOUR_API_KEY",
+    "model": "deepseek-chat"
+  },
+  "Qwen": {
+    "endpoint": "YOUR_ENDPOINT",
+    "key": "YOUR_API_KEY",
+    "model": "DeepSeek-R1-Distill-Qwen-32B"
+  }
+}
+```
+
+- Modify utils/LLM.py
+```python
+# Modify this part
+
+auth = config.get('DS')
+
+# Set up llm model
+from langchain_deepseek import ChatDeepSeek
+
+model = ChatDeepSeek(
+    api_key=auth.get("key"),
+    model="deepseek-chat"
+)
+```
+
+---
+
+# Notes
 
 
 # LCEL
@@ -60,6 +113,8 @@ Pydantic
 
 - input_schema
 - output_schema
+
+# LangGraph
 
 # Concepts
 
@@ -212,13 +267,12 @@ Conditional Edge
 graph.add_conditional_edges("node_a", routing_function, {True: "node_b", False:"node_c"})
 ```
 
-## Messages
-
-
 
 # LangServe (Deprecated)
 
+Now integrated in LangGraph Platform
 
+See: LangGraph/Deployments
 
 ```
 pip install --upgrade "langserve[all]"
