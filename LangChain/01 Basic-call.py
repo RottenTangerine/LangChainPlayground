@@ -1,5 +1,5 @@
 from icecream import ic
-from LLM import model
+from utils.LLM import model
 
 # invoke message
 from langchain_core.messages import HumanMessage, SystemMessage

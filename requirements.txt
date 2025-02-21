@@ -1,0 +1,8 @@
+langchain
+langchain-openai
+langchain-deepseek
+langchain-community
+langgraph
+langgraph-checkpoint-sqlite
+icecream
+jupyter

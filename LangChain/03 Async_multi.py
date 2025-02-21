@@ -1,4 +1,4 @@
-from LLM import model
+from utils.LLM import model
 import asyncio
 
 
